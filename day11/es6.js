@@ -19,7 +19,10 @@
 var w = [0,1,2,3,4,5]
 var a = ['andi','lalala','siapa', 'dimana','budi']
 
-var mapAngka = w.map(function(val){
+var mapAngka = a.map(function(val){
     return val + 'saya'
 })
+//ga ada pengecekan, semua masuk ke nilai baru.
+
+
 
