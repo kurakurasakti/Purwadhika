@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    </style>
+
+<body>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Usia</th>
+                    <th>Pekerjaan</th>
+                    <th>Picture</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id='isiTable'>
+                
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td><input type="text" placeholder="Masukan Nama"></td>
+                    <td><input type="text" placeholder="Usia"></td>
+                    <td><input type="text" placeholder="Pekerjaan"></td>
+                    <td><input type="text" placeholder="Link Picure"></td>
+                    <td><input type="button" onclick="tambahData()" value="Add"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <table>
+            <tr>
+                <td><input type="text" placeholder="Filter By Nama" style="padding:5px"></td>                           
+                <td><input type="text" placeholder="Filter By Umur" style="padding:5px"></td>          
+                <td><input type="text" placeholder="Filter By Pekerjaan" style="padding:5px"></td>
+                <td><input type="button" value="Filter" onclick="filterNama()"></td>
+            </tr>
+        </table>
+        <h1> </h1>
+    </center>
+<script>
+    var data = []
+    class Orang{
+        constructor(nama,usia,pekerjaan,a){
+            this.nama = nama;
+            this.umur = usia;
+            this.pekerjaan = pekerjaan;
+            this.pict = a
+        }
+    }
+    function tambahData(){
+    
+    var selektor = document.getElementsByTagName('input')
+    var nama = selektor[0].value  // Andi
+    var usia = selektor[1].value
+    var pekerjaan = selektor[2].value
+    var link = selektor[3].value
+    if(nama == '' || usia == '' || pekerjaan == ''|| link == ''){
+        document.getElementsByTagName('h1')[0].style.color = 'red'
+        document.getElementsByTagName('h1')[0].innerHTML = 'Harus diisi'
+    }else{
+        document.getElementsByTagName('h1')[0].innerHTML = ''
+        var newMan = new Orang(nama,usia,pekerjaan,link)
+        data.push(newMan)
+        tampilData(data)
+        for(var i = 0; i <4 ; i++){
+            selektor[i].value = ''
+        }
+    }
+    }  
+    function tampilData(newData){
+        var tampil = ''
+        for(var i =0 ; i <a.length;i++){
+            tampil += `<tr>
+                        <td>${a[i].nama}</td>
+                        <td>${a[i].umur}</td>
+                        <td>${a[i].pekerjaan}</td>
+                        <td><img src=${a[i].pict} width = '50px'></td>
+                        <td><button>Add</button></td> 
+                        </tr>`
+        }
+        document.getElementById('isiTable').innerHTML = tampil
+    }
+    function filterNama(){
+        var inputUser = document.getElementsByTagName('input')[5].value 
+        var inputUsia = document.getElementsByTagName('input')[6].value 
+        var inputPekerjaan = document.getElementsByTagName('input')[7].value
+        var newData = []
+        for(var i = 0 ; i < data.length ; i++){
+            if(data[i].nama.startWith(inputUser) && data[i].umur.startWith(inputUsia) && data[i].pekerjaan.startWith(inputPekerjaan)){
+                newData.push(data[i])
+            }
+        }
+        tampilData(newData)
+        
+    }
+    // const ubahWarna = () =>{
+    //     document.getElementsByTagName('input')[5].style.fontSize=20px;
+    // }
+    // const filterPekerjaan = () =>{
+
+    // }
+</script>
+
+</body>
+
+</html>

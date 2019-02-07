@@ -1,0 +1,132 @@
+<script>
+    var buah = ['jeruk' , 'lemon' , 'kiwi']
+    var harga = [20000,25000,30000]
+    var cart = []
+    var qty = []
+    var hargaCart = []
+function showProduct(){
+    var menu = ''
+    for(var i = 0 ; i < buah.length ; i++){
+        menu += (i+1) + '. ' + buah[i] + ' Rp. ' + harga[i] + '\n'
+    }  
+    alert(menu)
+}
+function addProduct(){
+    
+    do{
+        var belumada = true
+        do{
+            var newProduk = prompt('Masukan Produk')
+        }while(newProduk == '')
+      
+        for(var i = 0 ; i < buah.length ; i++){ 
+        if(newProduk == buah[i]){
+            belumada = false
+            alert('produk Sudah Ada')
+        }
+    }
+    }while(belumada == false)
+    var newHarga = prompt('Masukan Harga Untuk ' + newProduk)
+    
+    buah.push(newProduk)
+    harga.push(newHarga)
+    alert('Input Product Success')
+}
+function deleteProduct(){
+    var menu = ''
+    for(var i = 0 ; i < buah.length ; i++){
+        menu += (i+1) + '. ' + buah[i] + ' Rp. ' + harga[i] + '\n'
+    }  
+    var inputDelete = parseInt(prompt(menu += '\n Produk Mana Yang ingin dihapus'))
+    var index = inputDelete-1
+    buah.splice(index , 1)
+    harga.splice(index , 1)
+    alert('Delete Product Suksess')
+}
+function fnCekKeranjang(){
+    var total = 0
+    var keranjang = ''
+    for(var i = 0 ; i < cart.length ; i++){ // i =1
+        keranjang += (i+1) + '. ' + cart[i] + ' Rp. ' + hargaCart[i] + ' X ' + qty[i] + ' = Rp. ' + (qty[i] * hargaCart[i])  + '\n'
+        total += qty[i] * hargaCart[i]
+    }
+    keranjang += '\n Total Belanja Adalah Rp. ' + total 
+    alert(keranjang)
+}
+function fnBelanja(){
+    cart = prompt(showProduct())
+    
+
+}
+function fnAdmin(){
+    do{
+        var proteksiMenuAdmin = true
+        do{
+        var protAdmin = true
+        var pilih = prompt('1. Show Product \n 2. Add Product \n 3. Delete Produk \n 4. Logout')
+        if(pilih > 0 && pilih < 5){
+            protAdmin =false
+        }else{
+            alert('Anda Salah Input')
+        }
+        }while(protAdmin == true)
+        if(pilih == 1){
+            showProduct()
+        }else if(pilih == 2){
+            showProduct()
+            addProduct()
+            showProduct()
+        }else if(pilih == 3){
+            deleteProduct()
+            showProduct()
+        }else if(pilih == 4){
+            protMain = true
+            proteksiMenuAdmin = false
+        }
+    }while(proteksiMenuAdmin)
+    
+}
+function fnUser(){
+    do
+    {
+        var proteksiMenuUser = true
+        var pilihan = prompt('1. Belanja \n 2. Cek Keranjang \n3. Exit')
+        if(pilihan > 0 && pilihan < 4){
+            proteksiMenuUser = false
+        }else{
+            alert('Anda Salah Input')
+        }
+    }while(proteksiMenuUser == true)
+    if(pilihan == 1){
+        fnBelanja()
+    }else if(pilihan == 2){
+        fnCekKeranjang()
+    }
+    // else if(pilihan == 3){
+    //     fnCheckout()
+    // }
+    else if(pilihan == 3){
+        protMain = true
+    }
+}
+// Main Menu
+do{
+    var protMain = true
+    do{
+        var proteksiPrompt = true
+        var mainMenu = prompt('Login Sebagai \n 1. Admin \n 2. User \n 3. Exit') //1
+        if(mainMenu > 0 && mainMenu <4){
+            proteksiPrompt = false
+        }else{
+            alert('Anda Salah Input')
+        }
+    }while(proteksiPrompt == true)
+    if(mainMenu == 1){
+        fnAdmin()
+    }else if(mainMenu == 2){
+        fnUser()
+    }else if(mainMenu == 3){
+        protMain =false
+    }
+}while(protMain == true)
+</script>

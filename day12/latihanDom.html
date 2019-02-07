@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    </style>
+
+<body>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Usia</th>
+                    <th>Pekerjaan</th>
+                    <th>Picture</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id='isiTable'>
+                
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td><input type="text" placeholder="Masukan Nama"></td>
+                    <td><input type="text" placeholder="Usia"></td>
+                    <td><input type="text" placeholder="Pekerjaan"></td>
+                    <td><input type="text" placeholder="Link Picure"></td>
+                    <td><input type="button" onclick="tambahData()" value="Add"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <table>
+            <tr>
+                <td><input type="text" placeholder="Filter by name" style="padding:10px"></td>
+                <td><input type="button" value="Filter" onclick="filterNama()"></td>
+            </tr>
+        </table>
+        <h1> </h1>
+    </center>
+<script>
+    function tambahData(){
+    
+    var selektor = document.getElementsByTagName('input')
+    var nama = selektor[0].value
+    var usia = selektor[1].value
+    var pekerjaan = selektor[2].value
+    var link = selektor[3].value
+    if(nama == '' || usia == '' || pekerjaan == ''|| link == ''){
+        document.getElementsByTagName('h1')[0].style.color = 'red'
+        document.getElementsByTagName('h1')[0].innerHTML = 'Harus diisi'
+    }
+    else{
+        document.getElementsByTagName('h1')[0].innerHTML = ''
+        // document.getElementById('isiTable').innerHTML += `<tr>
+        //                                             <td>${nama}</td>
+        //                                             <td>${usia}</td>
+        //                                             <td>${pekerjaan}</td>
+        //                                             <td><img src=${link} width = '50px'></td>
+        //                                             <td><button>Add</button></td> 
+        //                                         </tr>`
+        var newMan = new Orang(nama, usia, pekerjaan, link)
+        data.push(newMan)
+        tampilData(a)
+        for(var i = 0; i <4 ; i++){
+            selektor[i].value = ''
+        }
+    }
+    }
+    function filterNama(){
+        var inputUser = document.getElementsByTagName('input'[5].value)
+        var newData = []
+        for(var i = 0; i<data.lenght; i++){
+            if(data[i].nama.includes(inputUser)){
+                newData.push(data[i])
+            }
+        }
+        tampilData(newData)
+    }
+
+    function tampilData(a){
+        var tampil = ''
+        for(var i = 0; i <4; i++){
+            tampil += `<tr>
+                        <td>${a[i].nama}</td>
+                        <td>${a[i].usia}</td>
+                        <td>${a[i].pekerjaan}</td>
+                        <td><img src=${a[i].link} width = '50px'></img></td>
+                        <td><button>Add</button><td>
+                        </tr>`
+        }
+        document.getElementById('isiTable').innerHTML = tampil
+    }
+
+    
+</script>
+
+</body>
+
+</html>

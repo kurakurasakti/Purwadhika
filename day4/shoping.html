@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+        <button onclick="pilihMenu()">menu</button>
+        <script>
+            function pilihMenu(){
+                var pilihanMenu = prompt("Silahkan Pilih\n1. Ayam Rp. 10.000,-\n2. Bebek Rp. 20.000,-\n3. Salmon Rp 50.000,-\n4. Exit!");
+                if(pilihanMenu == 1){
+                    var qty = prompt("berapa banyak yang mau dibeli?");
+                    if(qty > 0){
+                        var hasil = ayam(qty);
+                    }
+                    else{
+                        return alert("jumlah barang tidak boleh 0")
+                    }
+                    alert("Total belanja Rp "+hasil+",-");
+                    confirmation();
+                }
+                else if(pilihanMenu == 2){
+                    var qty = prompt("berapa banyak yang mau dibeli?");
+                    if(qty > 0){
+                        var hasil = bebek(qty);
+                    }
+                    else{
+                        return alert("jumlah barang tidak boleh 0")
+                    }
+                    alert("Total belanja Rp "+hasil+",-");
+                    confirmation();
+
+                }
+                else if(pilihanMenu == 3){
+                    var qty = prompt("berapa banyak yang mau dibeli?");
+                    if(qty > 0){
+                        var hasil = salmon(qty);
+                    }
+                    else{
+                        return alert("jumlah barang tidak boleh 0")
+                    }
+                    alert("Total belanja Rp "+hasil+",-");
+                    confirmation();
+
+                }
+
+                else if(pilihanMenu == 4){
+                    alert("byebye");
+                }
+                else{
+                    alert("masukan angka hanya 1-4");
+                }
+
+            }
+            function ayam(qty){
+               var harga = 10000
+               hasil = qty * harga;
+               return hasil;
+            }
+            function bebek(qty){
+               var harga = 20000
+               hasil = qty * harga;
+               return hasil;
+            }
+            function salmon(qty){
+               var harga = 50000
+               hasil = qty * harga;
+               return hasil;
+            }
+            function confirmation(){
+                var txt;
+                var con = confirm("Masih mau belanja?");
+                if(con==true){
+                    pilihMenu();
+                }
+                else{
+                    return alert("Thank you!");
+                }
+            }
+        </script>
+            
+    </body>
+</html>

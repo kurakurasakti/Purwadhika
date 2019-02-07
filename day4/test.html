@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+                function pilihMenu(){
+                var pilihanMenu = prompt("Pilih salah satu\n1. Segitiga Sama kaki\n2. segitiga siku-siku\n3. Exit");
+                if(pilihanMenu = 1){
+                    var baris = prompt("Pilih berapa baris yang mau di cetak (1-10)");
+                    var hasil = segitigaSamakaki(baris);
+                    document.write(hasil)
+                }
+                else if(pilihanMenu = 2){
+                    var pilihanMenu1 = prompt("Pilih salah satu\n1. siku atas\n2. siku bawah");
+
+                    if(pilihanMenu1 = 1){
+
+                    }
+                    else if(pilihanMenu1 = 2){
+
+                    }
+                    else{
+                        document.write("pilih yg bener")
+                    }
+                }
+                else if(pilihanMenu = 3){
+
+                }
+
+                else{
+                    document.write("hanya input 1-4!")
+                }
+
+            }
+            function segitigaSamakaki(baris){
+                var bintang=''
+                for(let i=0;i<baris;i++){
+                    for(let j=i;j<9;j++){
+                    bintang+=' '
+                    }
+                for(let k=0;k<=i;k++){
+                    bintang+='*'
+                }
+                for (let l=0;l<=i-1;l++){
+                    bintang+='*'
+                }
+                bintang+='\n'
+                }
+                console.log(bintang)
+                return bintang;
+            }
+            function segitigaSiku(){
+
+            }
+        </script>
+    
+    </body> 
+    
+</html>

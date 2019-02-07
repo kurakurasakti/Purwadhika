@@ -1,0 +1,60 @@
+<script>
+    var buah = ['Jeruk', 'Kiwi', 'Apel']
+    var harga = [20000, 25000, 30000]
+
+    var role = 0
+
+    prompt(pilihRole());
+    function pilihRole(){
+        role = prompt('1. Admin\n2. User')
+        if(role == 1){
+            var pilihMenu = prompt('1. Product List\n2. Input Product\n3. Delete Product')
+            if(pilihMenu == 1){
+                var hasilGabugan = []
+                hasilGabungan = prompt(listProduct(buah, harga))
+            }
+            else if(pilihMenu == 2){
+                buah1 = prompt('Masukan Nama Buah')
+                harga1 = prompt('Masukan Harga buah')
+                buah.push(buah1)
+                harga.push(harga1)
+                hasilGabungan = alert(listProduct(buah, harga))
+                var con = confirm('balik ke menu awal?')
+                if(con==true){
+                    pilihRole()
+                }
+                else{
+                    break
+                }
+
+                
+            }
+            else if(pilihMenu == 3){
+                var indexDelete = prompt('masukan angka product yang mau di delete')
+                
+            }
+            else{
+                alert('pilihan menu hanya 1-3!')
+            }
+        }
+        else if(role == 2 ){
+
+        }
+        else{
+            alert('pilih hanya 1-2')
+        }
+    }
+
+    function listProduct(buah,harga){
+        var newArr = buah.map((e, i)=> e +" Rp "+harga[i]+"\n")
+        return newArr;
+    }
+
+    function deleteProduct(){
+
+    }
+
+
+   
+</script>
+

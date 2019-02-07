@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<body>
+        <button onclick="pilihMenu()">menu</button>
+        <script>
+                //promt daftar menu 
+                //1. segitiga
+                //2. segitiga siku
+                //3. exit
+                // proteksi user masukin only 1-10
+                //reed user input
+                // bikin
+                //ayam 10k
+                //bebk 20k
+                //salmon 35k
+            function pilihMenu(){
+                var pilihanMenu = prompt("Pilih salah satu\n1. Segitiga Sama kaki\n2. Segitiga siku-siku\n3. Exit");
+                if(pilihanMenu == 1){
+                    var baris = prompt("Pilih berapa baris yang mau di cetak (1-10)");
+                    if(baris<10 && baris >1){
+                        var hasil = segitigaSamakaki(baris);
+                    }
+                    else{
+                        return alert("Pilih yg bener dan coba lagi!")
+                    }
+                    alert(hasil);
+                }
+                else if(pilihanMenu == 2){
+                    var pilihanMenu1 = prompt("Pilih salah satu\n1. siku atas\n2. siku bawah");
+                    if(pilihanMenu1 == 1){
+                        var baris = prompt("Pilih berapa baris yang mau di cetak (1-10)");
+                        if(baris<=10 && baris > 1){
+                            var hasil = segitigaSikuHA(baris);
+                        }
+                        else{
+                            return alert('pilih baris yang bener!')
+                        }
+                        return alert(hasil);
+                    }
+                    else if(pilihanMenu1 == 2){
+                        var baris = prompt("Pilih berapa baris yang mau di cetak (1-10)");
+                        if(baris<=10 && baris > 1){
+                            var hasil = segitigaSikuHB(baris);
+                        }
+                        else{
+                            return alert('pilih baris yang bener!')
+                        }
+                        return alert(hasil);
+                    }
+                    else{
+                        
+                        return alert("pilih yg bener")
+                    }
+                }
+                else if(pilihanMenu == 3){
+                    alert("byebye")
+                }
+                else{
+                    alert("hanya input 1-3!")
+                }
+
+            }
+            function segitigaSamakaki(baris){
+                var bintang=''
+                for(let i=0;i<baris;i++){
+                    for(let j=i;j<9;j++){
+                    bintang+=' '
+                    }
+                for(let k=0;k<=i;k++){
+                    bintang+='*'
+                }
+                for (let l=0;l<=i-1;l++){
+                    bintang+='*'
+                }
+                bintang+='\n'
+                }
+                console.log(bintang)
+                return bintang;
+            }
+            function segitigaSikuHA(baris){
+                var bintang =''
+                for(i=baris;i>0;i--){
+                    for(j=0;j<i;j++){
+                    bintang+='* '
+                    }
+                    bintang+='\n'
+                }
+            console.log(bintang)
+            return bintang;
+            }
+            function segitigaSikuHB(baris){
+                var bintang =''
+                for(i=-1;i<baris;i++){
+                    for(j=0;j<=i;j++){
+                        bintang+='* '
+                    }
+                    bintang+='\n'
+                }
+                console.log(bintang)
+                return bintang;
+            }
+                
+        </script>
+            
+    </body>
+</html>
