@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    th, td {
+                /* border: 3px solid powderblue; */
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    
+    </style>
+
+<body>
+    <center>
+        <h2>Daftar Manusia</h2>
+        <table style="border: 3px solid powderblue;">
+                <tr>
+                    <td><input type="text" placeholder="Masukan Nama"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Masukan Usia"></td>
+                </tr>
+                <tr>
+                        <td><input type="text" placeholder="Masukan Pekerjaan"></td>
+                    </tr>
+                <tr>
+                    <td>
+                       Jenis kelamin <br> <input type="radio" name="gender" value="pria">pria</input><input type="radio" name="gender" value="wanita">wanita</input>
+                    </td>
+                </tr>
+                <td><input type="button" onclick="tambahData()" value="Submit"/></td>
+                    <tr>
+                        <td>sort by</td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" onclick="filterManusia()" value="Nama"/>
+                            <input type="button" onclick="filterManusia()" value="Umur"/>
+                            <input type="button" onclick="filterManusia()" value="Kelamin"/>
+                            <input type="button" onclick="filterManusia()" value="Pekerjaan"/>
+                        </td>
+                    </tr>
+            </table>
+            <table id="isiTable">
+                <h1></h1>
+
+            </table>
+        </center>
+
+<script>
+var data = []
+    class Orang{
+        constructor(nama,usia,kelamin,pekerjaan){
+            this.nama = nama;
+            this.umur = usia;
+            this.kelamin = kelamin;
+            this.pekerjaan = pekerjaan;
+        }
+    }
+    function tambahData(){
+    // alert('a')
+    var selektor = document.getElementsByTagName('input')
+    var selektorGender = document.querySelector('input[name="gender"]:checked').value
+    var nama = selektor[0].value  // Andi
+    var usia = selektor[1].value
+    var kelamin = selektorGender
+    var pekerjaan = selektor[2].value
+    if(nama == '' || usia == '' || pekerjaan == ''|| kelamin == ''){
+        document.getElementsByTagName('h1')[0].style.color = 'red'
+        document.getElementsByTagName('h1')[0].innerHTML = 'Harus diisi'
+    }else{
+        document.getElementsByTagName('h1')[0].innerHTML = ''
+        var newMan = new Orang(nama,usia,kelamin,pekerjaan)
+        data.push(newMan)
+        tampilData(data)
+        for(var i = 0; i <4 ; i++){
+            selektor[i].value = ''
+        }
+    }
+    
+    }  
+    function tampilData(newData){
+
+        var tampil = ''
+        for(var i =0 ; i <newData.length;i++){
+            tampil += `<tr>
+                        <td>${newData[i].nama}</td>
+                        <td>${newData[i].umur}</td>
+                        <td>${newData[i].kelamin}</td>
+                        <td>${newData[i].pekerjaan}</td>
+                        <td><button>Add</button></td> 
+                        </tr>`
+        }
+        document.getElementById('isiTable').innerHTML = tampil
+    }
+    function filterManusia(){
+        
+    }
+        </script>
+</body>
+
+</html>
