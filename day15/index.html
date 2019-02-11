@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+                border: 1px transparent;
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    </style>
+
+<body>
+    <center>
+        <input type="button" onclick="tampilkan()" value="silahkan">
+        <table>
+            <thead>
+                <tr>
+                    <td>nama</td>
+                    <td>usia</td>
+                    <td>pekerjaan</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody id="isi">
+
+            </tbody>
+        </table>
+    </center>
+<script>
+    class Orang{
+        constructor(nama,usia,pekerjaan){
+            this.nama = nama;
+            this.umur = usia;
+            this.pekerjaan = pekerjaan;
+        }
+    }
+    var data = [
+        new Orang('andi', '20', 'karyawan'),
+        new Orang('soto', '20', 'karyawan'),
+        new Orang('mi', '20', 'karyawan')
+
+    ]
+    
+    function tampilkan(){
+        var hasil = data.map(function(val){
+            return `<tr>
+                <td>${val.nama}</td>
+                <td>${val.umur}</td>
+                <td>${val.pekerjaan}</td>
+                </tr>`
+        })
+        document.getElementById('isi').innerHTML = hasil.join('')
+    }
+    
+</script>
+
+</body>
+
+</html>
