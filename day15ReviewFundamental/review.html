@@ -24,8 +24,9 @@
                     </thead>
                     
                 </table>
+                <h1 id="jmlCart"></h1>
                 <table id="isiCart">
-
+                    
                 </table>
             </center>
             
@@ -35,6 +36,7 @@
                         this.nama = a;
                         this.harga = b;
                         this.img = c;
+                        this.stock = d;
                     }
                 }
                 var data = [
@@ -61,35 +63,34 @@
                     document.getElementById('isiTable').innerHTML = a.join('')
                 }
                 tampil(data)
-                // function tampilCart(arr){
-                //     var output = ''
-                //     var a = arr.map(function(a,b){
-                //         return `<tr>
-                //                     <td>${a.nama}</td>
-                //                     <td>${a.harga}</td>
-                //                     <td><img src='${a.img}' width=20px/></td>
-                //                     <td>${b}</td>
-                //                     <!-- <td><input type='button' onClick="onBtnDelete('${b,a.nama}')" value="delete"/></td>-->
-                //                     <td><input type='button' onClick="onBtnAddChart('${a,b}')" value="Add To Chart"/></td>
-                //                 </tr>`
-                //     })
-                //     document.getElementById('isiCart').innerHTML = a.join('')
-                // }
+                function tampilCart(dataCart){
+                    var output = ''
+                    var a = dataCart.map(function(a,b){
+                        return `<tr>
+                                    <td>${a.nama}</td>
+                                    <td>${a.harga}</td>
+                                    <td><img src='${a.img}' width=20px/></td>
+                                    <td>${b}</td>
+                                    <td><input type='button' onClick="onBtnDelete('${b,a.nama}')" value="delete"/></td>
+                                    <td><input type='button' onClick="onBtnAddChart('${a,b}')" value="Add To Chart"/></td>
+                                </tr>`
+                    })
+                    document.getElementById('isiCart').innerHTML = a.join('')
+                }
+                //tampilCart(dataCart)
                 function onBtnDelete(a,b){
                     var konfirmasi = confirm('Are You Sure to delete '+a+'?')
                     if(konfirmasi){
-                        data.splice(b,1)
+                        dataCart.splice(b,1)
                         tampil(data)
                     }
                     
                 }
-                function onBtnAddChart(a,b) {
-                    var dataCart = []
-                    var temp = data.splice(b,1)
-                    dataCart.push(temp)
+                var dataCart = []
+                function onBtnAddChart(b) { 
+                    dataCart.push(data[b])
                     tampilCart(dataCart)
-                    //document.getElementById("isiChart").innerHTML = data
-                    //document.getElementById('isiTable').innerHTML = a.join('')
+                    document.getElementById('jmlCart').innerHTML = 'Jumlah barang anda '+dataCart.length
                 }
             </script>
 
