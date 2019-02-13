@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    </style>
+
+    <body>
+            <center>
+                <h1>daftar</h1>
+                <table>
+                    <thead id="isiTable">
+
+                    </thead>
+                    
+                </table>
+                <table id="isiCart">
+
+                </table>
+            </center>
+            
+            <script>
+                class dataMenu{
+                    constructor(a,b,c){
+                        this.nama = a;
+                        this.harga = b;
+                        this.img = c;
+                    }
+                }
+                var data = [
+                    new dataMenu('kacang garuda', 20000, 'http://dpanell.com/img/hero-garuda.png'),
+                    new dataMenu('roti', 15000, 'https://pngimage.net/wp-content/uploads/2018/06/sari-roti-png-4.png'),
+                    new dataMenu('SUSU', 14000, 'https://www.temanmurni.co.id/niatmurni/assets/img/product-bear-brand-can.png'),
+                    new dataMenu('neskape', 15000, 'http://www.pngmart.com/files/5/Nescafe-PNG-Picture.png'),
+                    new dataMenu('sari wangi', 15000, 'https://www.tehsariwangi.com/uploads/product/1/d066c236698b005d31cb72125515c183.png'),
+                    
+                ]
+
+                function tampil(arr){
+                    var output = ''
+                    var a = arr.map(function(a,b){
+                        return `<tr>
+                                    <td>${a.nama}</td>
+                                    <td>${a.harga}</td>
+                                    <td><img src='${a.img}' width=20px/></td>
+                                    <td>${b}</td>
+                                    <!-- <td><input type='button' onClick="onBtnDelete('${b,a.nama}')" value="delete"/></td>-->
+                                    <td><input type='button' onClick="onBtnAddChart('${a,b}')" value="Add To Chart"/></td>
+                                </tr>`
+                    })
+                    document.getElementById('isiTable').innerHTML = a.join('')
+                }
+                tampil(data)
+                // function tampilCart(arr){
+                //     var output = ''
+                //     var a = arr.map(function(a,b){
+                //         return `<tr>
+                //                     <td>${a.nama}</td>
+                //                     <td>${a.harga}</td>
+                //                     <td><img src='${a.img}' width=20px/></td>
+                //                     <td>${b}</td>
+                //                     <!-- <td><input type='button' onClick="onBtnDelete('${b,a.nama}')" value="delete"/></td>-->
+                //                     <td><input type='button' onClick="onBtnAddChart('${a,b}')" value="Add To Chart"/></td>
+                //                 </tr>`
+                //     })
+                //     document.getElementById('isiCart').innerHTML = a.join('')
+                // }
+                function onBtnDelete(a,b){
+                    var konfirmasi = confirm('Are You Sure to delete '+a+'?')
+                    if(konfirmasi){
+                        data.splice(b,1)
+                        tampil(data)
+                    }
+                    
+                }
+                function onBtnAddChart(a,b) {
+                    var dataCart = []
+                    var temp = data.splice(b,1)
+                    dataCart.push(temp)
+                    tampilCart(dataCart)
+                    //document.getElementById("isiChart").innerHTML = data
+                    //document.getElementById('isiTable').innerHTML = a.join('')
+                }
+            </script>
+
+    </body>
+</html>
+
