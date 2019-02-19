@@ -1,0 +1,106 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    th, td {
+                /* border: 3px solid powderblue; */
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 50px}
+    
+    </style>
+
+<body>
+    <center>
+       <table>
+            <td></td>
+            <td></td>
+            <td></td>
+       </table>
+        </center>
+
+
+<script>
+    var dua = `__<br>
+                &nbsp|<br>
+                --<br>
+                |<br>
+                __`
+
+    show = () =>{
+        selector = document.getElementById('input')
+        arrInput = selector.value.split()
+        for(var i = 0; i < 4; i++){
+            if (arrInput == 1) {
+                document.getElementsByTagName('td')[i].innerHTML = stau
+            }
+            else if (arrInput == 2) {
+                document.getElementsByTagName('td')[i].innerHTML = dua
+            }
+        }
+    }
+</script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to return the number of cells in the table's first row.</p>
+
+<table id="myTable">
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+</table>
+<br> 
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTable").rows[0].cells
+  document.getElementById("demo").innerHTML = "Found " + x + " cells in the first tr element.";
+}
+
+function sort(x) {
+    var hasil = x.sort
+    alert(x)
+}
+</script>
+
+</body>
+</html>

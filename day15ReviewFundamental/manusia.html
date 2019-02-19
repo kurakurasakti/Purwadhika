@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daftar Manusia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        .ukuran {
+            padding: 10px
+        }
+</style>
+</head>
+
+<body>
+    <center>
+        <h1>Daftar Manusia</h1>
+        <table>
+            <tr>
+                <td>
+                    <form id="form1">
+                        <input type="text" placeholder="Masukan Nama" class="ukuran" /> <br><br>
+                        <input type="number" placeholder="Usia" class="ukuran"/><br><br>
+                        Kelamin: <input type="radio" name="kelamin" value="Pria" /> Pria
+                            <input type="radio" name="kelamin" value="Wanita" /> Wanita <br><br>
+                        <input type="text" placeholder="Pekerjaan" class="ukuran"/><br><br>
+                    </form>
+
+                    <button onclick="submit()"> Submit </button><br><br>
+                    Sort Berdasarkan <br><br>
+                    <button onclick="sortNama()">Nama </button>
+                    <button onclick="sortUmur()">Umur </button>
+                    <button onclick="sortKelamin()">Kelamin </button>
+                    <button onclick="sortPekerjaan()">Pekerjaan </button>
+
+                    <br />
+                    <br />
+
+                </td>
+            </tr>
+        </table>
+
+
+        <table id="tableData">
+
+        </table>
+    </center>
+    <script>
+        var arrManusia = [
+            // new manusia('Seto',30,'Karyawan','Pria'),  // Andi , Bagus , Seto
+            // new manusia('Bagus',30,'Karyawan','Pria'),
+            // new manusia('Andi',30,'Karyawan','Pria')
+        ];
+        class manusia {
+            constructor(nama, usia, job, sex) {
+                this.nama = nama;
+                this.umur = usia;
+                this.pekerjaan = job;
+                this.kelamin = sex;
+            }
+        }
+        function tampil() {
+            var outPut =
+                `<tr>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Kelamin</th>
+                    <th>Pekerjaan</th>
+                    </tr>`;
+            for (var i = 0; i < arrManusia.length; i++) {
+                var templateRow =
+                    `<tr>
+                        <td> ${arrManusia[i].nama} </td>
+                        <td> ${arrManusia[i].umur} </td>
+                        <td> ${arrManusia[i].kelamin} </td>
+                        <td> ${arrManusia[i].pekerjaan} </td>
+                        </tr>`;
+                outPut += templateRow;
+            }
+            document.getElementById("tableData").innerHTML = outPut;
+        }
+        function submit() {
+            var newMan = new manusia();
+            newMan.nama = document.getElementById("form1").elements[0].value;
+            newMan.umur = document.getElementById("form1").elements[1].value;
+            newMan.pekerjaan = document.getElementById("form1").elements[4].value;
+            if (document.getElementById("form1").elements[2].checked == true) {
+                newMan.kelamin = document.getElementById("form1").elements[2].value;
+            } else if (document.getElementById("form1").elements[3].checked == true) {
+                newMan.kelamin = document.getElementById("form1").elements[3].value;
+            }
+            arrManusia.push(newMan);
+            tampil();
+        }
+        function sortNama() {
+            for (var i = 0; i < arrManusia.length; i++) {  //3
+                for (var j = (i + 1); j < arrManusia.length; j++) {  // i = 1 // Seto
+                    if (arrManusia[i].nama.toLowerCase() > arrManusia[j].nama.toLowerCase) {  // j = 2 // Bagus
+                        var temp = arrManusia[i]; // data seto
+                        arrManusia[i] = arrManusia[j]; // data seto = data bagus
+                        arrManusia[j] =  temp
+                    }
+                }
+            }
+                        // data Seto   ==> Data Andi
+                        // data Bagus ==> data Bagus
+                        // data Andi  ==> data Seto
+            tampil();
+        }
+        function sortUmur() {
+            for (var i = 0; i < arrManusia.length; i++) {
+                for (var j = (i + 1); j < arrManusia.length; j++) {
+                    if (arrManusia[i].umur > arrManusia[j].umur) {
+                        var temp = arrManusia[i];
+                        arrManusia[i] = arrManusia[j];
+                        arrManusia[j] = temp;
+                    }
+                }
+            }
+            tampil();
+        }
+        function sortKelamin() {
+            for (var i = 0; i < arrManusia.length; i++) {
+                for (var j = (i + 1); j < arrManusia.length; j++) {
+                    if (arrManusia[i].kelamin > arrManusia[j].kelamin) {
+                        var temp = arrManusia[i];
+                        arrManusia[i] = arrManusia[j];
+                        arrManusia[j] = temp;
+                    }
+                }
+            }
+            tampil();
+        }
+        function sortPekerjaan() {
+            for (var i = 0; i < arrManusia.length; i++) {
+                for (var j = (i + 1); j < arrManusia.length; j++) {
+                    if (arrManusia[i].pekerjaan > arrManusia[j].pekerjaan) {
+                        var temp = arrManusia[i];
+                        arrManusia[i] = arrManusia[j];
+                        arrManusia[j] = temp;
+                    }
+                }
+            }
+            tampil();
+        }
+    </script>
+</body>
+
+</html>
