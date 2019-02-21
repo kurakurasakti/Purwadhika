@@ -1,0 +1,78 @@
+/* .navbar a{
+    text-decoration: none;
+    color:whitesmoke;
+    font-size: 30px;
+    margin-right: 10px;
+    transition: 2s;
+    position: relative;
+    margin-top: 10px;
+}
+.navbar{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 20px;
+    right: 0;
+    top: 10px;
+    position: absolute;
+    height: 50px;
+}
+
+.solid{
+    border-bottom: 0.5px grey solid;
+}
+.navbar a:hover{
+    border-bottom: 2px rgb(233, 228, 228) solid;
+    color: rgb(209, 198, 183);
+}
+.jumbotron{
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/brooke-lark-385507-unsplash.jpg)
+}
+.body{
+    margin: 0px;
+    height: 4000px;
+} */
+
+body{
+    margin: 0px;
+    height: 1800px;
+}
+
+.solid{
+    border-bottom: 0.5px #b4b4b4 solid;
+    background-color: dimgray;
+    transition: 2s;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin-right: 10px;
+    transition: 1s;
+    position: relative;
+    top: 10px;
+    left: 80%;
+}
+
+.navbar a:hover{
+    border-bottom: 1px white solid;
+    color: rgb(194, 190, 190)
+}
+
+.navbar{
+    margin-right: 70px;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+}
+
+
+.jumbotron{
+    height: 500px;
+    /*   */
+    background-size: cover;
+    background-image: url("img/brooke-lark-385507-unsplash.jpg")
+}
