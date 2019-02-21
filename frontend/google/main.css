@@ -1,0 +1,72 @@
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.navbar a{
+    color: black;
+    text-decoration: none;
+    margin-top: 1%;
+    margin-right: 10px;
+}
+
+.navbar a:hover{
+    text-decoration:  underline;
+    color: rgba(0,0,0,0.87);
+}
+
+.logo{
+    text-align: center;
+    margin-top: 15%;
+}
+
+.search input{
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 16px;
+    width: 37%;
+    height: 34px;
+    border: none;
+    -webkit-box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    -moz-box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    margin-left: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px
+}
+.search input:hover{
+   
+    -webkit-box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    -moz-box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    box-shadow: 0px 7px 8px -6px rgba(115,109,115,1);
+    margin-left: 30%;
+}
+.search input:focus{
+    outline: none
+}
+
+.button{
+    text-align: center;
+    margin-top: 3%;
+    
+}
+
+.button input{
+    height: 36px;
+    font-size: 13px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 16px 0 16px;
+    background-color: #f2f2f2;
+    border: none;
+
+}
+.button input:hover{
+    border: 1px black solid;
+    color: black
+}
+
+.navbar a img{
+    width: 30px;
+    border-radius: 30px 
+}
