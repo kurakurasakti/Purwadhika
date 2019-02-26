@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face{
+	font-family: centuryGothicNormal;
+	src:url(Font/GOTHIC.TTF);
+}
+@font-face{
+	font-family: centuryGothicItalic;
+	src:url(Font/GOTHICI.TTF);
+}
+@font-face{
+	font-family: centuryGothicBold;
+	src:url(Font/GOTHICB.TTF);
+}@font-face{
+	font-family: centuryGothicBoldItalic;
+	src:url(Font/GOTHICBI.TTF);
+}
+.bold
+{
+	font-family: centuryGothicBold;
+	}
+.italic
+{
+	font-family: centuryGothicItalic;
+	}
+.bolditalic
+{
+	font-family: centuryGothicBoldItalic;
+	}
+
+body
+{
+	margin-top:0px;
+	margin-left:0px;
+	width:100%;
+	font-family: centuryGothicNormal;	
+}
+.b
+{
+	 color:white;
+}
+
+.b:hover
+{
+	color:white;
+	border-bottom:5px solid orange;
+	display:inline-block;
+	text-decoration:none;
+
+}
+.topleft
+{
+	top:0px;
+	left:0px;
+	}
+.menucounteiner
+{
+	height:126px;
+	background-color:#00A07C;
+	
+	}
+.putih
+{
+	color:#FFFFFF;
+	}
+.logopotition
+{
+	top:30px;
+	left:50px;
+	position:absolute;
+	}
+	.text
+{
+text-align:center;
+position:absolute;
+color: #fff;
+font-size:30pt;
+}
+a:link, a:visited, a:active {
+    color: white;
+	padding-bottom:50px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover{
+    color:white;
+}
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  background:#FFA500;
+  opacity: 0.7;
+}
+.jarak1{
+	height:70px;
+	}
+.jarak2{
+	width:70px;
+	display:inline-block;
+	}
+
+.kotakblack
+{
+	background-color:#000000;
+	z-index:-4;
+	height:143px;
+	width:100%;
+	position:absolute;
+	}
+	.imgWrap {
+ position: relative;
+ height:307px;
+ width:412px;
+}
+.spasi{
+margin-top:70px;
+margin-left:67px;	
+height:307px;
+width:412px;
+display:inline-block;
+}
+.posisisrc{
+ position:absolute;
+ margin-top:720px;
+  bottom: 40px;
+  left: 20%;
+  padding-left: 0;
+  margin-left: -10%;
+  text-align: center;
+  list-style: none;
+  height:64px;
+	z-index:1;
+}
+	.tbsearch{
+background:transparent;
+color:#fff;
+padding:4px 8px 4px 8px
+
+!important;
+width:334px;
+height:64px;
+border:2px solid white;
+font-size:18px;
+}
+.tbsearch2{
+background:transparent;
+color:#fff;
+padding:4px 8px 4px 8px
+
+!important;
+width:334px;
+height:64px;
+border:2px solid white;
+font-size:18px;
+}
+.button
+{
+background:#f7991d;
+color:#fff;
+padding:4px 8px 4px 8px
+
+!important;
+width:191px;
+height:60px;
+border:2px solid #f7991d;
+font-size:18px;
+  }
+
+
+.gambar:link, .gambar:visited, .gambar:active
+{
+	display:inline-block;
+	}
+.gambar:hover{
+		
+		display:inline-block;
+		z-index:999;
+		opacity:0.5;
+}
+.kotakorg
+{
+	background-color:orange;
+	margin-top:70px;
+	margin-left:70px;
+	width:412;
+	height:307;
+	display:inline-block
+	
+	}
+	
+
+
+
+/* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background:url(../IMG%20Tree/a12.png);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background:url(../IMG%20Tree/b05.png) no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+		.imgDescription{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+      margin:auto;
+
+      visibility: hidden;
+      opacity: 0;
+      pointer-events:none;
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;
+  */
+}
+.description{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
