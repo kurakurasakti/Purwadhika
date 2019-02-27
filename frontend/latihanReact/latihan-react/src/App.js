@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './commponents/header';
 import Form from './commponents/form';
-//import Footer from './commponents/footer';
+import {Route} from 'react-router-dom'
+import Footer from './commponents/footer';
 //import Button from 'reactstrap';
+import Homepage from './commponents/homePage'
 
 
 class App extends Component {
@@ -18,8 +20,14 @@ class App extends Component {
           {/* <Form fn={this.btnClick}/>
           {/* <Button color="primary"></Button> 
           <h1>Hello World</h1>
-          <Footer nama='seto' warna='red' > Mahasiswa </Footer> */}
-          <Form/>
+          <Footer nama='seto' warna='red' > Mahasiswa </Footer> 
+          <Form/>*/}
+        <div className='container'>
+        <Route path='/' component={Homepage} exact />
+        <Route path='/form' component={Form} />
+        
+        </div>
+        <Footer />
       </div>
      
      
