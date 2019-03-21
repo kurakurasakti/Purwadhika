@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "roy",
+      "password": "asd123",
+      "role" : "admin"
+    },
+    {
+      "id": 1,
+      "username": "fikri",
+      "password": "asd123",
+      "role" : "user"
+    },
+    {
+      "id": 1,
+      "username": "fikri",
+      "password": "asd123",
+      "role" : "user"
+    },
+    {
+      "id": 1,
+      "username": "fikri",
+      "password": "asd123",
+      "role" : "user"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "nama": "kaos",
+      "harga": 20000,
+      "discount": 10,
+      "deskripsi": "kaos terbik",
+      "img": "https://images.champssports.com/pi/C1800604/zoom/champion-graphic-short-sleeve-t-shirt-mens",
+      "category": "polos"
+    },
+    {
+      "id": 2,
+      "nama": "kaos",
+      "harga": 21000,
+      "discount": 15,
+      "deskripsi": "kaos terbik di sini",
+      "img": "http://thegoodsdept.com/media/catalog/product/cache/1/rotator_image/270x334/9df78eab33525d08d6e5fb8d27136e95/0/6/060617026922_.jpg",
+      "category": "polos"
+    },
+    {
+      "id": 3,
+      "nama": "kaos",
+      "harga": 22000,
+      "discount": 20,
+      "deskripsi": "kaos terbik di sana",
+      "img": "https://moneyinc.com/wp-content/uploads/2016/11/Hanes-UNICEF-1996-Olympics-T-shirt-598x600.jpeg",
+      "category": "polos"
+    },
+    {
+      "id": 4,
+      "nama": "kaos",
+      "harga": 23000,
+      "discount": 20,
+      "deskripsi": "kaos terbik dan dimana-mana",
+      "img": "https://www.dopestudent.com/wp-content/uploads/2018/02/offwhite-for-all-tshirt-02.jpg",
+      "category": "polos"
+    },
+    {
+      "id": 6,
+      "nama": "kaos",
+      "harga": 50000,
+      "discount": 10,
+      "deskripsi": "kaos terbik mantap jiwa",
+      "img": "https://cdn.shopify.com/s/files/1/1155/1758/products/Ambush_T-Shirt_Mockup_Front_570x570_crop_center.jpg?v=1521837663",
+      "category": "mahal"
+    },
+    {
+      "id": 5,
+      "nama": "kaos",
+      "harga": 30000,
+      "discount": 0,
+      "deskripsi": "kaos terbik mantap jiwa",
+      "img": "https://ae01.alicdn.com/kf/HTB14DGYfLuSBuNkHFqDq6xfhVXac/bape-t-shirt-Original-Brand-Men-Short-Sleeve-Summer-bathing-ape-S3.jpg_640x640.jpg",
+      "category": "mahal "
+    },
+    {
+      "nama": "kaos",
+      "harga": "1000",
+      "discount": "0",
+      "category": "mahal",
+      "img": "https://cdn-images.farfetch-contents.com/12/64/38/91/12643891_13809650_480.jpg",
+      "deskripsi": "mana mampu beli",
+      "id": 7
+    },
+    {
+      "nama": "dwad",
+      "harga": "221",
+      "discount": "7",
+      "category": "sfef",
+      "img": "https://cdn-images.farfetch-contents.com/12/64/38/91/12643891_13809650_480.jpg",
+      "deskripsi": "dawdwa",
+      "id": 8
+    }
+  ]
+  
+}

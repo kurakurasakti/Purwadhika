@@ -1,39 +1,41 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
-import './App.css';
-import Navbar from './commponents/header';
-import Form from './commponents/form';
-import {Route} from 'react-router-dom'
-import Footer from './commponents/footer';
-//import Button from 'reactstrap';
-import Homepage from './commponents/homePage'
+import Footer from './components/footer'
+import Navbar from './components/header'
+import Form from './components/form'
+import Homepage from './components/homepage'
+import Product from './components/product'
+import TxtArea from './components/txtarea';
+import LatihanDua from './components/latihanDua';
+import LatihanTiga from './components/latihanTiga';
+import LatihanEmpat from './components/latihan4';
 
+import {Route} from 'react-router-dom'
+import './App.css';
 
 class App extends Component {
   btnClick = () => {
-    alert('masuk')
-}
+    alert('Masuk')
+  }
+
+
   render() {
     return (
       <div>
-        <Navbar/>        
-          {/* <Form fn={this.btnClick}/>
-          {/* <Button color="primary"></Button> 
-          <h1>Hello World</h1>
-          <Footer nama='seto' warna='red' > Mahasiswa </Footer> 
-          <Form/>*/}
+        <Navbar/>
         <div className='container'>
-        <Route path='/' component={Homepage} exact />
-        <Route path='/form' component={Form} />
-        
+          <Route path='/form' component={Form} />
+          <Route path='/products' component={Product} />
+          <Route path='/' component={Homepage} exact />
+          <Route path='/txtArea' component={TxtArea}/>
+          <Route path='/latihandua' component={LatihanDua}/>
+          <Route path='/latihantiga' component={LatihanTiga}/>
+          <Route path='/latihanemapt' component={LatihanEmpat}/>
         </div>
-        <Footer />
+        <Footer/>
       </div>
-     
-     
+      
     );
   }
 }
 
 export default App;
-
