@@ -60,7 +60,7 @@
   "products": [
     {
       "id": 6,
-      "nama": "kaos",
+      "nama": "kaos1",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -69,7 +69,7 @@
     },
     {
       "id": 7,
-      "nama": "kaos",
+      "nama": "kaos2",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -78,7 +78,7 @@
     },
     {
       "id": 8,
-      "nama": "kaos",
+      "nama": "kaos3",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -87,7 +87,7 @@
     },
     {
       "id": 9,
-      "nama": "kaos",
+      "nama": "kaos4",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -96,7 +96,7 @@
     },
     {
       "id": 10,
-      "nama": "kaos",
+      "nama": "kaos5",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -105,7 +105,7 @@
     },
     {
       "id": 11,
-      "nama": "kaos",
+      "nama": "kaos6",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -114,7 +114,7 @@
     },
     {
       "id": 12,
-      "nama": "kaos",
+      "nama": "kaos7",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -123,7 +123,7 @@
     },
     {
       "id": 13,
-      "nama": "kaos",
+      "nama": "kaos8",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
@@ -132,25 +132,7 @@
     },
     {
       "id": 14,
-      "nama": "kaos",
-      "harga": 50000,
-      "discount": 10,
-      "deskripsi": "kaos terbik mantap jiwa",
-      "img": "https://cdn.shopify.com/s/files/1/1155/1758/products/Ambush_T-Shirt_Mockup_Front_570x570_crop_center.jpg?v=1521837663",
-      "category": "mahal"
-    },
-    {
-      "id": 15,
-      "nama": "kaos",
-      "harga": 50000,
-      "discount": 10,
-      "deskripsi": "kaos terbik mantap jiwa",
-      "img": "https://cdn.shopify.com/s/files/1/1155/1758/products/Ambush_T-Shirt_Mockup_Front_570x570_crop_center.jpg?v=1521837663",
-      "category": "mahal"
-    },
-    {
-      "id": 16,
-      "nama": "kaos",
+      "nama": "kaos9",
       "harga": 50000,
       "discount": 10,
       "deskripsi": "kaos terbik mantap jiwa",
